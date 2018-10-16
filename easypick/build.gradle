@@ -27,4 +27,8 @@ repositories {
 dependencies {
 	implementation('org.springframework.boot:spring-boot-starter')
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
+	
+	//OCR Api
+	compile 'com.google.cloud:google-cloud-vision:1.48.0'
+	
 }
