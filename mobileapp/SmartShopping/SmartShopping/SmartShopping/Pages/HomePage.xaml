@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="#303030"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="SmartShopping.Pages.HomePage">
+    <ContentPage.Content>
+        <StackLayout Spacing="10" Margin="10">
+            <Button x:Name="CreateorderBtn" Text="Create Order" HorizontalOptions="Fill" BackgroundColor="#ff9b59" Margin="0,10"  BorderRadius="10" Clicked="CreateorderBtn_Clicked"/>
+            <Button x:Name="MyorderBtn" Text="My Orders" HorizontalOptions="Fill" BackgroundColor="#ff9b59" Margin="0,10"  BorderRadius="10" Clicked="MyorderBtn_Clicked"/>
+            <Button x:Name="AboutBtn" Text="About" HorizontalOptions="Fill" BackgroundColor="#ff9b59" Margin="0,10"  BorderRadius="10" Clicked="AboutBtn_Clicked"/>
+            <Button x:Name="HelpBtn" Text="Help" HorizontalOptions="Fill" BackgroundColor="#ff9b59" Margin="0,10"  BorderRadius="10" Clicked="HelpBtn_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
