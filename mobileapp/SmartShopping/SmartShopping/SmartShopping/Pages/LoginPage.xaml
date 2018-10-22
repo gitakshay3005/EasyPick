@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundImage="basket.jpg"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="SmartShopping.Pages.LoginPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" Margin="10">
+            <!-- Place new controls here -->
+            <BoxView HeightRequest="100" BackgroundColor="Transparent"/>
+            <Label x:Name="UNameLbl" Text="User Name" HorizontalOptions="Fill" TextColor="White" FontSize="Medium"/>
+            <Entry x:Name="UNameEntry" HorizontalOptions="Fill" TextColor="White" Placeholder="Email" Keyboard="Email" PlaceholderColor="White" BackgroundColor="Transparent" TextChanged="UNameEntry_TextChanged"/>
+            <Label x:Name="PasswordLbl" Text="Password" HorizontalOptions="Fill" TextColor="White" FontSize="Medium"/>
+            <Entry  x:Name="PasswordEntry" HorizontalOptions="Fill" TextColor="White" Placeholder="Password" BackgroundColor="Transparent"  IsPassword="True" PlaceholderColor="White" TextChanged="PasswordEntry_TextChanged"/>
+            <Button x:Name="SigninBtn"  Text="SignIn" HorizontalOptions="Fill" VerticalOptions="EndAndExpand" BackgroundColor="#ff9b59" BorderRadius="10" Margin="0,10" Clicked="SigninBtn_Clicked"/>
+            <Button  x:Name="ResisterBtn" Text="Register" HorizontalOptions="Fill" BackgroundColor="#ff9b59" Margin="0,10"  BorderRadius="10"  Clicked="ResisterBtn_Clicked"/>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

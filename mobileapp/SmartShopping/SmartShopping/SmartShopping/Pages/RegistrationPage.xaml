@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="#515151"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="SmartShopping.Pages.RegistrationPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" Margin="10">
+            <BoxView HeightRequest="20" BackgroundColor="Transparent"/>
+            <Label x:Name="WelcomeLbl" Text="Welcome!" HorizontalOptions="CenterAndExpand" TextColor="White" FontSize="Large"/>
+            <Label x:Name="accountLbl" Text="Create Account with us..." HorizontalOptions="CenterAndExpand" TextColor="White" FontSize="Large"/>
+            <BoxView HeightRequest="20" BackgroundColor="Transparent"/>
+            <Label x:Name="NameLbl" Text="Name" HorizontalOptions="Fill" TextColor="White" FontSize="Medium"/>
+            <Entry x:Name="NameEntry" HorizontalOptions="Fill" TextColor="#303030" Placeholder="Full Name" PlaceholderColor="#303030" BackgroundColor="White"/>
+            <Label x:Name="EmailLbl" Text="Email" HorizontalOptions="Fill" TextColor="White" FontSize="Medium"/>
+            <Entry x:Name="EmailEntry" HorizontalOptions="Fill" TextColor="#303030" Placeholder="Email" PlaceholderColor="#303030" BackgroundColor="White"/>
+            <Label x:Name="PasswordLbl" Text="Enter Password" HorizontalOptions="Fill" TextColor="White"/>
+            <Entry  x:Name="PasswordEntry" HorizontalOptions="Fill" TextColor="#303030" Placeholder="Password" PlaceholderColor="#303030" BackgroundColor="White" IsPassword="True"/>
+            <Label x:Name="ConfirmPasswordLbl" Text="Confirm Password" HorizontalOptions="Fill" TextColor="White"/>
+            <Entry  x:Name="ConfirmPasswordEntry" HorizontalOptions="Fill" TextColor="#303030" Placeholder="Password" PlaceholderColor="#303030" BackgroundColor="White" IsPassword="True"/>
+            <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="Start">
+                <Label x:Name="AlreadyLbl" Text="Already Registered?" HorizontalOptions="EndAndExpand" TextColor="White"/>
+                <BoxView HeightRequest="1" BackgroundColor="White" HorizontalOptions="FillAndExpand" Margin="0,-7,0,0" />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command=""/>
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+            <Button  x:Name="ResisterBtn" Text="Register" HorizontalOptions="Fill" VerticalOptions="EndAndExpand" BackgroundColor="#ff9b59" Margin="0,10" BorderRadius="10" Clicked="ResisterBtn_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
