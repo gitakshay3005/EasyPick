@@ -4,7 +4,6 @@ using System;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Xamarin.Forms;
 
 namespace OSAMobileAlertsApp.Services
 {
@@ -31,11 +30,8 @@ namespace OSAMobileAlertsApp.Services
         /// <returns></returns>
         public async Task<Object> PostDataAsync<T>(Uri requestUri, string body = "", string ivKey = "")
         {
-
             try
-            {
-                //if (_networkConnection.IsNetworkAvailable())
-                //{
+            { 
                 using (HttpClient client = CreateHttpClient(ivKey))
                 {
                     using (HttpContent content = CreateHttpContent(body))
@@ -46,16 +42,7 @@ namespace OSAMobileAlertsApp.Services
                         }
                     }
                 }
-                //}
-                //else
-                //{
-
-                //    Device.BeginInvokeOnMainThread(async () =>
-                //    {
-                //        await _dialogService.DisplayAlertAsync(AppResources.NoNetworkTitle, AppResources.NoNetworkMessage, AppResources.OkTxt);
-                //    });
-
-                //}
+                
             }
             catch (Exception ex)
             {
@@ -92,9 +79,7 @@ namespace OSAMobileAlertsApp.Services
             {
                 Timeout = TimeSpan.FromMinutes(timeOut)
             };
-
-
-
+                       
             //Required once logged in
             //if (!string.IsNullOrEmpty(Settings.AccessToken))
             //{

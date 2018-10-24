@@ -58,5 +58,15 @@ namespace SmartShopping.Pages
                 // Unable to get location
             }
         }
+
+        private void Add_Button_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OnAddImage_Tapped(object sender, EventArgs e)
+        {
+
+        }
     }
 }
