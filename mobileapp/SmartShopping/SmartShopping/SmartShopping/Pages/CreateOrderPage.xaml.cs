@@ -1,4 +1,4 @@
-﻿using SmartShopping.Model;
+﻿using SmartShopping.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,12 +23,13 @@ namespace SmartShopping.Pages
             InitializeComponent();
             productListView.ItemsSource = new List<Product>
             {
-                new Product(){ ID = "1", Name = item , Quantity = " 1 "
+                new Product()
+                { ID = "1", Name = item , Quantity = " 1 "
                 }
             };
         }
 
-        private void productListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        private void ProductListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
 
         }

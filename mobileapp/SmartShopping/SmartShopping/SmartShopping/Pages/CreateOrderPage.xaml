@@ -12,14 +12,14 @@
     <ContentPage.Content>
         <StackLayout >
             <StackLayout x:Name="productLayout" Spacing="0"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                <ListView x:Name="productListView" SeparatorVisibility="Default" SeparatorColor="White" VerticalOptions="FillAndExpand" ItemTapped="productListView_ItemTapped" >
+                <ListView x:Name="productListView" SeparatorVisibility="Default" SeparatorColor="White" VerticalOptions="FillAndExpand" ItemTapped="ProductListView_ItemTapped" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal" Margin="5,0" BackgroundColor="Transparent">
                                     <Label Text="{Binding Name}" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" FontSize="Small"></Label>
                                     <StackLayout Orientation="Horizontal" Spacing="1" HorizontalOptions="End" VerticalOptions="CenterAndExpand" Margin="5">
-                                        <Image Source="Add.png" WidthRequest="15" HeightRequest="15"></Image>
+                                        <Image Source="Add.png" WidthRequest="15" HeightRequest="15" ></Image>
                                         <Label Text="{Binding Quantity}" BackgroundColor="White" TextColor="#303030" VerticalOptions="CenterAndExpand" Margin="3" FontSize="Small"></Label>
                                         <Image Source="subtract.png" WidthRequest="15" HeightRequest="15"></Image>
                                     </StackLayout>                                   
