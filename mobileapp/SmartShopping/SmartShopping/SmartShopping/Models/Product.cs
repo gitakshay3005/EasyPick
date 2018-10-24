@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SmartShopping.Model
+namespace SmartShopping.Models
 {
     public class Product
     {

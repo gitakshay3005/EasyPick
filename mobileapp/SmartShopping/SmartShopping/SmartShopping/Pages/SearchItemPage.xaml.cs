@@ -32,7 +32,7 @@ namespace SmartShopping.Pages
             Navigation.PushAsync(new CreateOrderPage(item));
         }
 
-        private void productSearchbar_SearchButtonPressed(object sender, System.EventArgs e)
+        private void ProductSearchbar_SearchButtonPressed(object sender, System.EventArgs e)
         {
             if (productSearchbar.Text.Length < 4)
                 DisplayAlert("Alert", "please enter minimum 4 letters", "ok");
@@ -40,7 +40,7 @@ namespace SmartShopping.Pages
                 StoresListView.ItemsSource = new List<string> { "result1", "result2", "result3", "result4" };
         }
 
-        private void productSearchbar_TextChanged(object sender, TextChangedEventArgs e)
+        private void ProductSearchbar_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (productSearchbar.Text.Length >= 4)
                 StoresListView.ItemsSource = new List<string> { "result1", "result2", "result3", "result4" };

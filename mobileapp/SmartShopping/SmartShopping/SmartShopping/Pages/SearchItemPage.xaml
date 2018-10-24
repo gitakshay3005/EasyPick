@@ -6,7 +6,7 @@
              BackgroundColor="#303030">
     <ContentPage.Content>
         <StackLayout>
-            <SearchBar x:Name="productSearchbar" SearchButtonPressed="productSearchbar_SearchButtonPressed" HeightRequest="50" TextChanged="productSearchbar_TextChanged" BackgroundColor="White" Placeholder="Search Item Here..." PlaceholderColor="#303030" />
+            <SearchBar x:Name="productSearchbar" SearchButtonPressed="ProductSearchbar_SearchButtonPressed" HeightRequest="50" TextChanged="ProductSearchbar_TextChanged" BackgroundColor="White" Placeholder="Search Item Here..." PlaceholderColor="#303030" />
             <StackLayout x:Name="DataNotAvailableLayout" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 <Label x:Name="NodataLbl" TextColor="White" FontSize="Medium" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Label>
             </StackLayout>

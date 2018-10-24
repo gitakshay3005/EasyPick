@@ -19,7 +19,7 @@ namespace SmartShopping.Pages
             Application.Current.MainPage = new NavigationPage(new HomePage());
         }
 
-        private void ResisterBtn_Clicked(object sender, EventArgs e)
+        private void RegisterBtn_Clicked(object sender, EventArgs e)
         {
             //Navigation.PushAsync(new RegistrationPage());
             Application.Current.MainPage = new NavigationPage(new RegistrationPage());
