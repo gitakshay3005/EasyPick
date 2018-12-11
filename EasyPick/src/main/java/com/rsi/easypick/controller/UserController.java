@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.rsi.easypick.products.beans.ProductSearchResponse;
 import com.rsi.easypick.user.beans.UserBean;
+import com.rsi.easypick.user.beans.UserLoginRequest;
 import com.rsi.easypick.user.beans.UserResponse;
 
 @CrossOrigin
@@ -27,7 +28,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST, produces = "application/json")
-	public HttpEntity<UserResponse> login()
+	public HttpEntity<UserResponse> login(@RequestBody(required = true)UserLoginRequest loginRequest)
 	{
 		
 		UserResponse userResponse = new UserResponse("6", "akshay", "sawant", "akshay.sawant@retailsolutions.com", "c");
