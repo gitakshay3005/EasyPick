@@ -1,6 +1,14 @@
-package com.rsi.easypick.model;
+package com.rsi.easypick.products.beans;
 
-public class Product {
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(Include.NON_NULL)
+public class ProductBean {
 
 	private long id;
 	private String name;
@@ -9,7 +17,10 @@ public class Product {
 	private String category;
 	private String supplier;
 	
-	public Product(long id, String name, String description, String upc, String category, String supplier) {
+	@JsonCreator
+	public ProductBean(@JsonProperty("id") long id, @JsonProperty("name") String name, 
+			@JsonProperty("description") String description, @JsonProperty("upc")String upc, 
+			@JsonProperty("category") String category, @JsonProperty("supplier") String supplier) {
 		super();
 		this.id = id;
 		this.name = name;
