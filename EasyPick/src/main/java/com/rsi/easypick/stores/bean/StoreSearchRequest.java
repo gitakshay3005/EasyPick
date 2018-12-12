@@ -11,12 +11,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(Include.NON_NULL)
 public class StoreSearchRequest {
+	private String longitude;
+	private String latitude;
 	private List<ProductQuantityBean> productQuantityList;
 
 	@JsonCreator
-	public StoreSearchRequest(@JsonProperty("productQuantityList")List<ProductQuantityBean> productQuantityList) {
+	public StoreSearchRequest(@JsonProperty("productQuantityList")List<ProductQuantityBean> productQuantityList,
+			@JsonProperty("longitude")String longitude, @JsonProperty("latitue")String latitude) {
 		super();
 		this.productQuantityList = productQuantityList;
+		this.longitude = longitude;
+		this.latitude = latitude;
 	}
 
 	public StoreSearchRequest() {
@@ -30,5 +35,22 @@ public class StoreSearchRequest {
 	public void setProductQuantityList(List<ProductQuantityBean> productQuantityList) {
 		this.productQuantityList = productQuantityList;
 	}
+
+	public String getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
+	}
+
+	public String getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+	
 
 }

@@ -13,6 +13,7 @@ public class ProductQuantityBean {
 	private String productName;
 	private String department;
 	private String supplier;
+	private double unitPrice;
 	private int quantity;
 	public String getProductId() {
 		return productId;
@@ -45,15 +46,23 @@ public class ProductQuantityBean {
 	public void setSupplier(String supplier) {
 		this.supplier = supplier;
 	}
+	public double getUnitPrice() {
+		return unitPrice;
+	}
+	public void setUnitPrice(double unitPrice) {
+		this.unitPrice = unitPrice;
+	}
 	@JsonCreator
 	public ProductQuantityBean(@JsonProperty("productId")String productId, @JsonProperty("productName")String productName, 
-			@JsonProperty("department")String department, @JsonProperty("supplier")String supplier, @JsonProperty("quantity")int quantity) {
+			@JsonProperty("department")String department, @JsonProperty("supplier")String supplier, @JsonProperty("quantity")int quantity,
+			@JsonProperty("unitPrice")double unitPrice) {
 		super();
 		this.productId = productId;
 		this.productName = productName;
 		this.department = department;
 		this.supplier = supplier;
 		this.quantity = quantity;
+		this.unitPrice =  unitPrice;
 	}
 	
 	public ProductQuantityBean() {
