@@ -9,7 +9,7 @@ import com.rsi.easypick.stores.bean.ProductQuantityBean;
 import com.rsi.easypick.stores.bean.StoreProductInformation;
 
 @Component
-public class StoreSearchServiceImpl {
+public class StoreSearchServiceImpl implements StoreSearchService{
 	public List<StoreProductInformation> getStoreProductInformation(List<ProductQuantityBean> productList){
 
 		List<StoreProductInformation> storeProductInfoList = new ArrayList<>();
