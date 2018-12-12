@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SmartShopping.Models
+﻿namespace SmartShopping.Models
 {
     public class Product
     {
