@@ -5,6 +5,8 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import com.google.cloud.vision.v1.AnnotateImageRequest;
 import com.google.cloud.vision.v1.AnnotateImageResponse;
 import com.google.cloud.vision.v1.BatchAnnotateImagesResponse;
@@ -31,11 +33,13 @@ public class OCRUtils {
 	 * @throws Exception on errors while closing the client.
 	 * @throws IOException on Input/Output errors.
 	 */
-	public static void detectHandwrittenOcr(String filePath) throws Exception {
+	public static List<String> detectHandwrittenOcr(MultipartFile file) throws Exception {
+		
+		List<String> scannedStrings = new ArrayList<String>();
 		
 		List<AnnotateImageRequest> requests = new ArrayList<>();
 
-		ByteString imgBytes = ByteString.readFrom(new FileInputStream(filePath));
+		ByteString imgBytes = ByteString.readFrom(file.getInputStream());
 
 		Image img = Image.newBuilder().setContent(imgBytes).build();
 		Feature feat = Feature.newBuilder().setType(Type.DOCUMENT_TEXT_DETECTION).build();
@@ -59,7 +63,7 @@ public class OCRUtils {
 			for (AnnotateImageResponse res : responses) {
 				if (res.hasError()) {
 					System.out.printf("Error: %s\n", res.getError().getMessage());
-					return;
+					return null;
 				}
 
 				// For full list of available annotations, see http://g.co/cloud/vision/docs
@@ -80,6 +84,7 @@ public class OCRUtils {
 								}
 								System.out.format("Word text: %s (confidence: %f)\n\n", wordText, word.getConfidence());
 								paraText = String.format("%s %s", paraText, wordText);
+								scannedStrings.add(wordText.trim());
 							}
 							// Output Example using Paragraph:
 							System.out.println("\nParagraph: \n" + paraText);
@@ -90,9 +95,13 @@ public class OCRUtils {
 					}
 				}
 				System.out.println("\nComplete annotation:");
-				System.out.println(annotation.getText());
+				String scannedText = annotation.getText();
+				System.out.println(scannedText);
 			}
 		}
+		
+		return scannedStrings;
+		
 	}
 
 }

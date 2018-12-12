@@ -1,12 +1,12 @@
 ﻿using SQLite;
 
-namespace SmartShopping.Tables
+namespace SmartShopping.DatabaseHelper.Tables
 {
     [Table("Product")]
     public class Product
     {
-        [AutoIncrement, Column("ID")]
-        public string ID { get; set; }
+        [PrimaryKey, AutoIncrement, Column("ID")]
+        public int ID { get; set; }
 
         [Column("ProductID")]
         public string ProductID { get; set; }

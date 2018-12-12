@@ -25,6 +25,13 @@ repositories {
 
 
 dependencies {
+	// https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jdbc
+	compile group: 'org.apache.tomcat', name: 'tomcat-jdbc', version: '8.5.34'
+	compile group: 'org.apache.tomcat', name: 'tomcat-catalina', version: '8.5.34'
+	/*compile group: 'org.hibernate', name: 'hibernate-search-orm', version:'5.5.0.Final'
+    compile(group: 'org.hibernate', name: 'hibernate-entitymanager', version:'5.0.12.Final') {
+exclude(module: 'xml-apis')
+    }*/
 	implementation('org.springframework.boot:spring-boot-starter')
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 	compile('org.springframework.boot:spring-boot-starter-web')
@@ -36,6 +43,7 @@ dependencies {
 	compile('io.springfox:springfox-swagger-ui:2.7.0')
 	
 	//OCR Api
-	compile 'com.google.cloud:google-cloud-vision:1.48.0'
+	compile 'com.google.cloud:google-cloud-vision:1.55.0'
+	compile 'com.google.cloud:google-cloud-storage:1.55.0'
 	
 }

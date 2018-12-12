@@ -1,5 +1,6 @@
-﻿using SmartShopping.Pages;
-using System;
+﻿using SmartShopping.DatabaseHelper;
+using SmartShopping.DatabaseHelper.Tables;
+using SmartShopping.Pages;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +12,8 @@ namespace SmartShopping
         public App()
         {
             InitializeComponent();
-
+            DBAccess dbaccess = DBAccess.Instance;
+            dbaccess.CreateTable<Product>();
             MainPage = new NavigationPage(new LoginPage());
         }
 

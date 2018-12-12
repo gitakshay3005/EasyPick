@@ -5,8 +5,8 @@
              x:Class="SmartShopping.Pages.CreateOrderPage">
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal">
-            <Label Text="Create Order" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" TextColor="White"/>
-            <Button Text="Add" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"/>
+            <Label Text="Create Order" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="White"/>
+            <Button Text="Add" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Clicked="Add_Button_Clicked"/>
         </StackLayout>
     </NavigationPage.TitleView>
     <ContentPage.Content>
@@ -18,12 +18,17 @@
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal" Margin="5,0" BackgroundColor="Transparent">
                                     <Label Text="{Binding Name}" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" FontSize="Small"></Label>
-                                    <StackLayout Orientation="Horizontal" Spacing="1" HorizontalOptions="End" VerticalOptions="CenterAndExpand" Margin="5">
-                                        <Image Source="Add.png" WidthRequest="15" HeightRequest="15" ></Image>
+                                    <StackLayout Orientation="Horizontal" Spacing="1" HorizontalOptions="End" VerticalOptions="CenterAndExpand" Margin="10">
+                                        <Image Source="Add.png" WidthRequest="15" HeightRequest="15">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                Tapped="OnAddImage_Tapped" NumberOfTapsRequired="1" />
+                                            </Image.GestureRecognizers>
+                                        </Image>
                                         <Label Text="{Binding Quantity}" BackgroundColor="White" TextColor="#303030" VerticalOptions="CenterAndExpand" Margin="3" FontSize="Small"></Label>
                                         <Image Source="subtract.png" WidthRequest="15" HeightRequest="15"></Image>
-                                    </StackLayout>                                   
-                                </StackLayout>                                  
+                                    </StackLayout>
+                                </StackLayout>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
