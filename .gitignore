@@ -20,3 +20,4 @@
 /mobileapp/SmartShopping/SmartShopping/SmartShopping/obj/Debug/netstandard2.0
 /mobileapp/SmartShopping/.vs/SmartShopping/v15
 /mobileapp/SmartShopping/SmartShopping/SmartShopping.iOS/bin/iPhoneSimulator/Debug
+*.user
