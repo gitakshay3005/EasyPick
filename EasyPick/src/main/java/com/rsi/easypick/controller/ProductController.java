@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.rsi.easypick.exceptions.DatabaseException;
 import com.rsi.easypick.products.beans.ProductSearchResponse;
@@ -27,5 +28,12 @@ public class ProductController {
 		ProductSearchResponse productSearchResponse = productService.getProductsByText(text);
 		return new ResponseEntity<ProductSearchResponse>(productSearchResponse, HttpStatus.OK);
 	}
+	
+	@RequestMapping(value = "/products", method = RequestMethod.POST, produces = "application/json")
+	public HttpEntity<ProductSearchResponse> searchProductsByImage(@RequestParam(required=true) MultipartFile file) throws Exception {
+		ProductSearchResponse productSearchResponse = productService.getProductsByImage(file);
+		return new ResponseEntity<ProductSearchResponse>(productSearchResponse, HttpStatus.OK);
+	}
+	
 	
 }
