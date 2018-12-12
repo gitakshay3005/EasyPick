@@ -30,6 +30,10 @@ public class ProductBean {
 		this.supplier = supplier;
 	}
 	
+	public ProductBean() {
+		
+	}
+	
 	public long getId() {
 		return id;
 	}
