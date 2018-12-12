@@ -15,7 +15,7 @@ import com.rsi.easypick.stores.bean.StoreSearchResponse;
 import com.rsi.easypick.stores.manager.StoreSearchManager;
 
 @RestController
-public class EasyPickStoreController {
+public class StoreController {
 	@Autowired
 	private StoreSearchManager storeSearchManager;
 	

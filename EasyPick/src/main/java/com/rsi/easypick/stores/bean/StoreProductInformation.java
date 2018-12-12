@@ -16,13 +16,14 @@ public class StoreProductInformation {
 	private String retailer;
 	private String distance;
 	private int availability;
+	private String city;
 	private double totalPrice;
 	private List<ProductQuantityBean> productList;
 	
 	
 	@JsonCreator
 	public StoreProductInformation(@JsonProperty("storeId")String storeId, @JsonProperty("storeName")String storeName, @JsonProperty("retailer")String retailer, 
-			@JsonProperty("distance")String distance, @JsonProperty("availability")int availability,
+			@JsonProperty("distance")String distance, @JsonProperty("availability")int availability,@JsonProperty("city")String city,
 			double totalPrice, List<ProductQuantityBean> productList) {
 		super();
 		this.storeId = storeId;
@@ -32,7 +33,15 @@ public class StoreProductInformation {
 		this.availability = availability;
 		this.totalPrice = totalPrice;
 		this.productList = productList;
+		this.city = city;
 	}
+	
+	
+	public StoreProductInformation() {
+		super();
+	}
+
+
 	public String getStoreId() {
 		return storeId;
 	}
@@ -74,6 +83,12 @@ public class StoreProductInformation {
 	}
 	public void setProductList(List<ProductQuantityBean> productList) {
 		this.productList = productList;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
 	}
 
 
